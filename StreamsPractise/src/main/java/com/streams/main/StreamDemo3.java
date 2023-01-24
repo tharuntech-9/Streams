@@ -1,6 +1,8 @@
 package com.streams.main;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
@@ -25,9 +27,13 @@ public class StreamDemo3 {
 		Set<String> set1 = stream.collect(Collectors.toSet());
 		set1.forEach(a -> System.out.print(a));
 		System.out.println(" \n ");
-		
-		TreeSet<String> myTreeSet = Stream.of("c", "java", ".net", "python").collect(Collectors.toCollection(TreeSet::new));
+
+		TreeSet<String> myTreeSet = Stream.of("c", "java", ".net", "python")
+				.collect(Collectors.toCollection(TreeSet::new));
 		System.out.println(myTreeSet);
+
+		List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
+		myList.stream().filter(s -> s.startsWith("c")).sorted().forEach(System.out::println);
 
 	}
 }

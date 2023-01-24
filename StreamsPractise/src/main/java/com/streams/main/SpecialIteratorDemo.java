@@ -1,6 +1,7 @@
 package com.streams.main;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.stream.Stream;
@@ -27,10 +28,11 @@ public class SpecialIteratorDemo {
 		System.out.println("From 2nd Spliterator");
 
 		anotherLanguageSpliterator.forEachRemaining(System.out::println);
-		
+
 		List<String> list2 = Arrays.asList("Java", "C", "C++", "Python", ".net");
 		Spliterator<String> spliterator3 = list2.spliterator();
 		System.out.println(spliterator3.characteristics());
+
 
 	}
 }
